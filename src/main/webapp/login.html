@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>高校大学生党员发展系统 - 登录</title>
+    <link rel="stylesheet" href="css/login.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<div id="app">
+<div class="login-container">
+    <h2>登录</h2>
+    <form action="/Party_war_exploded/UserServlet" method="POST">
+        <div class="input-group">
+            <label for="username" >编号：</label>
+            <input type="text" id="username" name="username" required v-model="username">
+        </div>
+        <div class="input-group">
+            <label for="password">密码：</label>
+            <input type="password" id="password" name="password" required v-model="password">
+        </div>
+        <button type="button" @click="login">登录</button>
+    </form>
+
+</div>
+    <a href="./register.html"><button class="button" >没有用户？立即注册</button></a>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            username:"",
+            password:"",
+        },
+
+        methods: {
+            login() {
+                const that = this;
+                axios({
+                    url: "/Party_war_exploded/UserServlet",
+                    method: "post",
+                    params:{
+                        username:that.username,
+                        password:that.password
+                    }
+                }).then((result) => {
+                    if (result.data.username!=0){
+                        localStorage.setItem("username",result.data.username);
+                        window.location.href="./main.html"
+                    } else {
+                        alert("登录失败！")
+                    }
+                })
+            },
+        },
+    })
+
+
+</script>
+</body>
+</html>

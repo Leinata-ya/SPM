@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>高校大学生党员发展系统 - 登记</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+
+<div class="register-container">
+    <h2>登记学习培养记录</h2>
+    <form action="/Party_war_exploded/StudyServlet" method="POST">
+        <div class="input-group">
+            <label for="PartyVolunteerId">编号：</label>
+            <input type="text" id="PartyVolunteerId" name="PartyVolunteerId" required>
+        </div>
+        <div class="input-group">
+            <label for="records">记录：</label>
+            <input type="text" id="records" name="records" required>
+        </div>
+        <button type="submit">登记</button>
+    </form>
+</div>
+
+</body>
+</html>

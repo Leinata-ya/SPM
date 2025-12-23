@@ -1,0 +1,59 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container for party members list */
+.party-members-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 80%; /* Adjust to your preference */
+    max-width: 800px; /* To limit maximum width on larger screens */
+    text-align: center; /* Center align contents */
+}
+
+/* Container wrapping each row of party members */
+.party-member-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Each party member item */
+.party-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    width: calc(25% - 10px); /* Reduce the width slightly to allow room for margins */
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+.party-member p {
+    margin: 0;
+    padding: 5px 0;}
+
+.party-member h3 {
+    margin: 10px 0;
+    padding: 0;}
+
+/* Optionally, style IDs and names differently */
+.party-member .id {
+    font-weight: bold;
+    color: #333;}
+
+.party-member .name {
+    font-size: 1.1em;
+    color: #6666;}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>党员详细信息</title>
+    <!-- 引入Vue.js库 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <!-- 引入处理党员详细信息的Vue实例脚本 -->
+    <script src="detail.js" defer></script>
+    <!-- 引入样式表 -->
+    <link rel="stylesheet" href="./css/people.css">
+</head>
+<body>
+<div id="detailApp">
+    <h1>党员详细信息</h1>
+    <!-- 使用v-if等待数据加载 -->
+    <div v-if="memberDetails">
+        <h2>姓名: {{ memberDetails.partyName }}</h2>
+        <p>党员编号: {{ memberDetails.partyVolunteerId }}</p>
+        <p>性别: {{ memberDetails.gender }}</p>
+        <p>性别: {{ memberDetails.astaus }}</p>
+        <button @click="111">返回</button>
+    </div>
+    <p v-else>正在加载党员信息...</p>
+</div>
+</body>
+</html>

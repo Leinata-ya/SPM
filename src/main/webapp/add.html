@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>高校大学生党员发展系统 - 录入新发展对象</title>
+    <link rel="stylesheet" href="./css/add.css"> <!-- 确保CSS文件路径正确 -->
+</head>
+<body>
+
+<div class="register-container">
+    <h2>录入新发展对象</h2>
+    <form action="/Party_war_exploded/AddServlet" method="post"> <!-- 更改method为"post"以提高安全性 -->
+
+        <div class="input-group">
+            <label for="partyVolunteerId">编号：</label> <!-- 将"label for"和"name"属性从"number"更改为"partyVolunteerId" -->
+            <input type="text" id="partyVolunteerId" name="partyVolunteerId" required>
+        </div>
+
+        <div class="input-group">
+            <label for="partyName">姓名：</label>
+            <input type="text" id="partyName" name="partyName" required>
+        </div>
+        <div class="input-group">
+            <label for="gender">性别：</label>
+            <input type="text" id="gender" name="gender" required>
+        </div>
+        <div class="input-group">
+            <label for="aStatus">审批状态：</label>
+            <input type="text" id="aStatus" name="aStatus" required>
+        </div>
+
+        <button type="submit">提交</button>
+
+    </form>
+</div>
+
+</body>
+</html>

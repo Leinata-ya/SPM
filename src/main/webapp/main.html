@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>高校大学生党员发展系统</title>
+    <!-- 引入外部CSS文件 -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2.1/axios.min.js"></script>
+</head>
+<body>
+
+
+<div id="app">
+    <div class="header">
+        <h1>高校大学生党员发展系统</h1>
+        <h2>Welcome, {{msg}}</h2>
+    </div>
+
+    <div class="button-container">
+
+    </div>
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            msg: ''
+        },
+
+        methods: {
+            getMsg(){
+                const that = this;
+                this.msg = localStorage.getItem("username");
+            }
+        },
+        mounted(){
+            this.getMsg()
+        }
+    })
+</script>
+<div class="button-container">
+    <a href="./people.html"><button class="button" >学生党员信息</button></a>
+    <a href="./study.html"><button class="button" >学习培养记录</button></a>
+    <a href="./add.html"><button class="button" >录入新发展对象</button></a>
+    <a href="./shenpi.html"><button class="button" >审批</button></a>
+</div>
+</body>
+</html>

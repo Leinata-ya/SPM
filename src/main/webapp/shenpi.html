@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>审批党员</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <script src="shenpi.js" defer></script>
+    <link rel="stylesheet" href="css/people.css">
+</head>
+<body>
+<div id="app" class="party-members-container">
+    <h1>待审批党员</h1>
+
+    <div class="party-member-row" v-if="partyMembers && partyMembers.length">
+        <div class="party-member" v-for="(member, index) in partyMembers" :key="index">
+            <p>党员编号: {{ member.partyVolunteerId }}</p>
+            <h3>姓名: {{ member.partyName }}</h3>
+            <button @click="shenpihan(member.partyVolunteerId)">审批</button>
+        </div>
+    </div>
+    <p v-else>正在加载党员信息...</p>
+</div>
+</body>
+</html>
